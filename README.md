@@ -22,7 +22,7 @@ Cells which have had font/fill colours applied *in addition* to the cell style w
 
 For dark mode to work for these cells, you need to re-apply a cell style to these cells. Beware that this will remove ALL additional formatting on the cell that isn't defined in a style.
 
-There's a macro `ResetStyles` to assist removing additional formatting so you can apply styles properly to a pre-existing workbook. Use with caution. Either save a copy of the file or copy the formatting/sheet to a new workbook to save the original formatting until you're happy with your changes.
+There's a macro `ResetStyles` to assist removing additional formatting so you can apply styles properly to a pre-existing workbook. Use with caution. Either save a copy of the file or copy the formatting/sheet to a new workbook to save the original formatting until you're happy with your changes. In some cases you may be better off selecting individual regions, clearing formatting manually.
 
 It may take a bit of time to undo formatting and replace with proper cell styles for a pre-existing Workbook but this is good practice and should hopefully be a one-off activity. Or just accept that not all cells will be darkened. 
 
