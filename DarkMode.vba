@@ -19,7 +19,7 @@ Function DarkMode()
     Call ApplyDarkStyle(styleName:="Heading 4", fillColorHex:="#2E3440", fontColorHex:="#FFFFFF")
     Call ApplyDarkStyle(styleName:="Title", fillColorHex:="#2E3440", fontColorHex:="#FFFFFF")
     Call ApplyDarkStyle(styleName:="Total", fillColorHex:="#2E3440", fontColorHex:="#FFFFFF")
-    Call ApplyDarkStyle(styleName:="Note", fillColorHex:="#2E3440", fontColorHex:="#FFFFFF", borderColorHex:="#454545")
+    Call ApplyDarkStyle(styleName:="Note", fillColorHex:="#B2B2B2", fontColorHex:="#000000", borderColorHex:="#454545")
     Call ApplyDarkStyle(styleName:="Explanatory Text", fillColorHex:="#2E3440", fontColorHex:="#FFFFFF", borderColorHex:="#454545")
     
     ' This should fail without error, as the style doesn't exist
@@ -210,6 +210,8 @@ Function CustomPropertyExists(propName As String) As Boolean
     Next
     CustomPropertyExists = propExists
 End Function
+
+
 
 
 
