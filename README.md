@@ -15,7 +15,7 @@ Don't forget to toggle a workbook back to light mode before you share it with un
 2. Run the macro ToggleDarkMode to switch between dark and light modes
 3. For ease of use, add the macro to your [Quick Access bar](https://www.howtogeek.com/232620/how-to-add-a-macro-to-the-quick-access-toolbar-in-office/)
 
-# It doesn't work for all cells
+# What it doesn't work for all cells?
 
 This approach only works for [cell styles](https://support.microsoft.com/en-us/office/apply-create-or-remove-a-cell-style-472213bf-66bd-40c8-815c-594f0f90cd22). 
 Cells which have had font/fill colours applied *in addition* to the cell style will not be darkened, since the additional formatting overrides cell style formatting.  
