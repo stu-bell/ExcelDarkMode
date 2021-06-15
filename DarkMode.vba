@@ -87,6 +87,7 @@ Sub ResetStyles()
     If MsgBox("This will erase all additional formatting on top of the existing cell styles in the selected sheets." & vbNewLine & _
               "If you're not sure, Cancel this and save a copy of your workbook", _
               vbCritical + vbOKCancel + vbDefaultButton2, "This step is not reversible") = vbOK Then
+    Application.ScreenUpdating = False
         For Each oSh In ActiveWindow.SelectedSheets
             For Each oCell In oSh.UsedRange.Cells
                 If oCell.MergeArea.Cells.Count = 1 Then
@@ -96,6 +97,7 @@ Sub ResetStyles()
             Next
         Next
     End If
+    Application.ScreenUpdating = True
 End Sub
 
 
