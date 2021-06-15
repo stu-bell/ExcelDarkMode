@@ -77,6 +77,29 @@ Sub SetWorkbookTableStyle()
     Call SetAllTableStyle(tabStyleName)
 End Sub
 
+' Resets formatting of cells to their original style (resets all formatting done on top of ANY style)
+' If the workbook hasn't had styles properly used you'll loose a lot of formatting
+' Use with caution!
+Sub ResetStyles()
+' https://jkp-ads.com/Articles/styles06.asp
+    Dim oCell As Range
+    Dim oSh As Worksheet
+    If MsgBox("This will erase all additional formatting on top of the existing cell styles in the selected sheets." & vbNewLine & _
+              "If you're not sure, Cancel this and save a copy of your workbook", _
+              vbCritical + vbOKCancel + vbDefaultButton2, "This step is not reversible") = vbOK Then
+        For Each oSh In ActiveWindow.SelectedSheets
+            For Each oCell In oSh.UsedRange.Cells
+                If oCell.MergeArea.Cells.Count = 1 Then
+                    ' reapply original style and remove additional formatting
+                    oCell.Style = CStr(oCell.Style)
+                End If
+            Next
+        Next
+    End If
+End Sub
+
+
+
 ' Change the color properties of the style to make them dark. Stores original style colors in a backup style
 ' To modify a new property (eg font name) set the property as a new optional arg and make sure to add the property definition to backup style (this function), the actual style (this function) and the function RestoreLightStyle
 ' All style params must be optional and tested for with `If Not IsMissing(paramName)`
