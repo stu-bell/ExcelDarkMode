@@ -44,3 +44,8 @@ It may take a bit of time to undo formatting and replace with proper cell styles
 ## Font colour isn't lightened
 
 If the cell background gets darkedned but the font colour doesn't change (ie dark text on dark background), it's most likely because the font colour has been changed for those cells. This is a variation of the case in the section above - to fix you'd need to reapply a style to these cells  
+
+# Feedback welcome
+
+[Create an issue on GitHub](https://github.com/stu0292/ExcelDarkMode/issues/new)
+
