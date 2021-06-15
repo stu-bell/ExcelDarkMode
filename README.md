@@ -47,5 +47,5 @@ If the cell background gets darkedned but the font colour doesn't change (ie dar
 
 # Feedback welcome
 
-[Create an issue on GitHub](https://github.com/stu0292/ExcelDarkMode/issues/new)
+To send feedback, head to the GitHub repository and create a new issue. 
 
