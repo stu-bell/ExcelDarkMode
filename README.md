@@ -15,11 +15,20 @@ Don't forget to toggle a workbook back to light mode before you share it with un
 2. Run the macro ToggleDarkMode to switch between dark and light modes
 3. For ease of use, add the macro to your [Quick Access bar](https://www.howtogeek.com/232620/how-to-add-a-macro-to-the-quick-access-toolbar-in-office/)
 
-# Notes
+# It doesn't work for all cells
 
-This only works for [cell styles](https://support.microsoft.com/en-us/office/apply-create-or-remove-a-cell-style-472213bf-66bd-40c8-815c-594f0f90cd22). 
-Cells which have had custom formatting applied (custom font colours, custom background fill etc) will not be affected by default. For dark mode to work for these cells, 
-remove the custom font and fill colours and create a new custom style for those cells (this is good practice anyway). 
+This approach only works for [cell styles](https://support.microsoft.com/en-us/office/apply-create-or-remove-a-cell-style-472213bf-66bd-40c8-815c-594f0f90cd22). 
+Cells which have had font/fill colours applied *in addition* to the cell style will not be darkened, since the additional formatting overrides cell style formatting.  
+
+For dark mode to work for these cells, you need to re-apply a cell style to these cells. Beware that this will remove ALL additional formatting on the cell that isn't defined in a style.
+
+There's a macro `ResetStyles` to assist removing additional formatting so you can apply styles properly to a pre-existing workbook. Use with caution. Either save a copy of the file or copy the formatting/sheet to a new workbook to save the original formatting until you're happy with your changes.
+
+It may take a bit of time to undo formatting and replace with proper cell styles for a pre-existing Workbook but this is good practice and should hopefully be a one-off activity. Or just accept that not all cells will be darkened. 
+
+## Font colour isn't lightened
+
+If the cell background gets darkedned but the font colour doesn't change (ie dark text on dark background), it's most likely because the font colour has been changed for those cells. This is a variation of the case in the section above - to fix you'd need to reapply a style to these cells  
 
 # Customisation
 
