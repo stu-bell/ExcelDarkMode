@@ -7,6 +7,8 @@ This works by replacing the colour definitions for styles already defined in the
 
 Don't forget to toggle a workbook back to light mode before you share it with uninitiated friends!
 
+![ExcelDarkMode](https://user-images.githubusercontent.com/17323155/122040068-4c7b3780-cdcf-11eb-8d70-ba46c97d1f05.gif)
+
 # Setup
 
 1. Copy the code from [DarkMode.vba](https://raw.githubusercontent.com/stu0292/ExcelDarkMode/main/DarkMode.vba) to a new module in your [PERSONAL.XLSB](https://support.microsoft.com/en-gb/office/create-and-save-all-your-macros-in-a-single-workbook-66c97ab3-11c2-44db-b021-ae005a9bc790), save. 
