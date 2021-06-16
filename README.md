@@ -53,4 +53,4 @@ To send feedback, head to the [GitHub repository](https://github.com/stu0292/Exc
 
 Copyright (c) 2021 Stuart Bell
 
-Licenced under the MIT licence: https://github.com/stu0292/ExcelDarkMode/blob/main/LICENSE
+Licenced under the [MIT licence](https://github.com/stu0292/ExcelDarkMode/blob/main/LICENSE)
