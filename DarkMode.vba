@@ -8,6 +8,40 @@
 ' Original table styles are not preserved when switching back to light mode - you'll need to specify the default light style in code or use sub SetWorkbookTableStyle
 ' Save this macro in your PERSONAL.XLSB (and add it to your quick access bar!) so you can use dark mode in any new workbook, including non-macro enabled ones
 Function DarkMode()
+    ' Set all tables to this dark table style
+    Call SetAllTableStyle("TableStyleDark2")
+
+    ' Dark colors for each style
+    Call UpdateStyleColors(styleName:="Normal", fillColorHex:="#2E3440", fontColorHex:="#FFFFFF", borderColorHex:="#454545")
+    Call UpdateStyleColors(styleName:="Heading 1", fillColorHex:="#2E3440", fontColorHex:="#FFFFFF")
+    Call UpdateStyleColors(styleName:="Heading 2", fillColorHex:="#2E3440", fontColorHex:="#FFFFFF")
+    Call UpdateStyleColors(styleName:="Heading 3", fillColorHex:="#2E3440", fontColorHex:="#FFFFFF")
+    Call UpdateStyleColors(styleName:="Heading 4", fillColorHex:="#2E3440", fontColorHex:="#FFFFFF")
+    Call UpdateStyleColors(styleName:="Title", fillColorHex:="#2E3440", fontColorHex:="#FFFFFF")
+    Call UpdateStyleColors(styleName:="Total", fillColorHex:="#2E3440", fontColorHex:="#FFFFFF")
+    Call UpdateStyleColors(styleName:="Note", fillColorHex:="#B2B2B2", fontColorHex:="#000000", borderColorHex:="#454545")
+    Call UpdateStyleColors(styleName:="Explanatory Text", fillColorHex:="#2E3440", fontColorHex:="#FFFFFF", borderColorHex:="#454545")
+End Function
+
+Function LightMode()
+    ' Set all tables to this light table style
+    Call SetAllTableStyle("TableStyleMedium9")
+
+    ' Light colors for each style
+    Call UpdateStyleColors(styleName:="Normal", fillColorHex:="#FFFFFF", fontColorHex:="#000000", borderLineStyle:=xlNone, interiorPattern:=xlNone)
+    Call UpdateStyleColors(styleName:="Heading 1", fontColorHex:="#44546A", interiorPattern:=xlNone)
+    Call UpdateStyleColors(styleName:="Heading 2", fontColorHex:="#44546A", interiorPattern:=xlNone)
+    Call UpdateStyleColors(styleName:="Heading 3", fontColorHex:="#44546A", interiorPattern:=xlNone)
+    Call UpdateStyleColors(styleName:="Heading 4", fontColorHex:="#44546A", interiorPattern:=xlNone)
+    Call UpdateStyleColors(styleName:="Title", fontColorHex:="#44546A", interiorPattern:=xlNone)
+    Call UpdateStyleColors(styleName:="Total", fontColorHex:="#000000", interiorPattern:=xlNone)
+    Call UpdateStyleColors(styleName:="Note", fillColorHex:="#FFFFCC", fontColorHex:="#000000", borderColorHex:="#B2B2B2", borderLineStyle:=xlNone, interiorPattern:=xlNone)
+    Call UpdateStyleColors(styleName:="Explanatory Text", fontColorHex:="#7F7F7F", borderColorHex:="#454545", interiorPattern:=xlNone)
+
+
+End Function
+
+Function DarkModeWithBackup()
     
     ' Set all tables to this dark table style
     Call SetAllTableStyle("TableStyleDark2")
@@ -26,7 +60,7 @@ Function DarkMode()
     ' This should fail without error, as the style doesn't exist
     'Call ApplyDarkStyle(styleName:="noexistlsakjalsdfkj", fillColorHex:="#000000")
 End Function
-Function LightMode()
+Function LightModeFromBackup()
     
     ' Set all tables to this light table style
     Call SetAllTableStyle("TableStyleLight1")
@@ -102,6 +136,55 @@ Sub ResetStyles()
 End Sub
 
 
+
+' Change the color properties of the style
+' To modify a new property (eg font name) set the property as a new optional arg
+' All style params must be optional and tested for with `If Not IsMissing(paramName)`
+Function UpdateStyleColors(styleName As String, _
+    Optional fillColorHex As String, _
+    Optional fontColorHex As String, _
+    Optional borderColorHex As String, _
+    Optional borderLineStyle As XlLineStyle, _
+    Optional interiorPattern As XlPattern)
+    ' Skip styles we haven't defined
+    On Error Resume Next
+    
+    ' Make sure the style includes all of the elements we want to change (eg Heading 1 doesn't include Patterns by default
+    With ActiveWorkbook.Styles(styleName)
+        .IncludeFont = True
+        .IncludeBorder = True
+        .IncludePatterns = True
+    End With
+    
+    ' Set the properties of the target style (only if a parameter has been passed for that property)
+    ' FIXME can we choose properties dynamically in VBA?
+    With ActiveWorkbook.Styles(styleName)
+        If Not IsMissing(fillColorHex) Then
+            .Interior.Color = HexToRGB(fillColorHex)
+        End If
+        If Not IsMissing(fontColorHex) Then
+            .Font.Color = HexToRGB(fontColorHex)
+        End If
+        If Not IsMissing(borderColorHex) Then
+            .Borders(xlLeft).Color = HexToRGB(borderColorHex)
+            .Borders(xlRight).Color = HexToRGB(borderColorHex)
+            .Borders(xlBottom).Color = HexToRGB(borderColorHex)
+            .Borders(xlTop).Color = HexToRGB(borderColorHex)
+        End If
+        
+        If borderLineStyle <> 0 Then
+            .Borders(xlLeft).LineStyle = borderLineStyle
+            .Borders(xlRight).LineStyle = borderLineStyle
+            .Borders(xlBottom).LineStyle = borderLineStyle
+            .Borders(xlTop).LineStyle = borderLineStyle
+        End If
+        
+        If interiorPattern <> 0 Then
+            .Interior.Pattern = interiorPattern
+        End If
+    End With
+
+End Function
 
 ' Change the color properties of the style to make them dark. Stores original style colors in a backup style
 ' To modify a new property (eg font name) set the property as a new optional arg and make sure to add the property definition to backup style (this function), the actual style (this function) and the function RestoreLightStyle
