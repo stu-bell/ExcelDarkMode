@@ -20,14 +20,14 @@ Don't forget to toggle a workbook back to light mode before you share it with un
 To change the dark mode colours, change the Hex colour code parameters in the `DarkMode` Function:
 
 ```
-   Call ApplyDarkStyle(styleName:="Normal", fillColorHex:="#2E3440", fontColorHex:="#FFFFFF", borderColorHex:="#454545")
+   Call UpdateStyleColors(styleName:="Normal", fillColorHex:="#2E3440", fontColorHex:="#FFFFFF", borderColorHex:="#454545")
 ```
 
 To find the Hex codes for your favourite colours, use the font colour 'More Colors' picker (and copy the Hex code from the bottom):
 
 ![image](https://user-images.githubusercontent.com/17323155/122032272-60bb3680-cdc7-11eb-858d-32e3b2fedf65.png)
 
-To set dark mode for a new style, copy the `Call ApplyDarkStyle...` line and provide the style name. Don't forget to add the style to the `LightMode` Function as well. 
+To set dark mode for a new style, copy the `Call UpdateStyleColors...` line and provide the style name. Don't forget to add the style to the `LightMode` Function as well. 
 
 
 # What if it doesn't work for all cells?
