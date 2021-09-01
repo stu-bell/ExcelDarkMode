@@ -35,7 +35,7 @@ Function LightMode()
     Call UpdateStyleColors(styleName:="Heading 4", fontColorHex:="#44546A", interiorPattern:=xlNone)
     Call UpdateStyleColors(styleName:="Title", fontColorHex:="#44546A", interiorPattern:=xlNone)
     Call UpdateStyleColors(styleName:="Total", fontColorHex:="#000000", interiorPattern:=xlNone)
-    Call UpdateStyleColors(styleName:="Note", fillColorHex:="#FFFFCC", fontColorHex:="#000000", borderColorHex:="#B2B2B2", borderLineStyle:=xlNone, interiorPattern:=xlNone)
+    Call UpdateStyleColors(styleName:="Note", fillColorHex:="#FFFFCC", fontColorHex:="#000000", borderColorHex:="#B2B2B2")
     Call UpdateStyleColors(styleName:="Explanatory Text", fontColorHex:="#7F7F7F", borderColorHex:="#454545", interiorPattern:=xlNone)
 
 
