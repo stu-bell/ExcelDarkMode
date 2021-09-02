@@ -9,7 +9,7 @@
 ' Save this macro in your PERSONAL.XLSB (and add it to your quick access bar!) so you can use dark mode in any new workbook, including non-macro enabled ones
 Function DarkMode()
     ' Set all tables to this dark table style
-    Call SetAllTableStyle("TableStyleDark2")
+    Call SetAllTableStyle("TableStyleDark1")
 
     ' Dark colors for each style
     Call UpdateStyleColors(styleName:="Normal", fillColorHex:="#2E3440", fontColorHex:="#FFFFFF", borderColorHex:="#454545")
@@ -44,7 +44,7 @@ End Function
 Function DarkModeWithBackup()
     
     ' Set all tables to this dark table style
-    Call SetAllTableStyle("TableStyleDark2")
+    Call SetAllTableStyle("TableStyleDark1")
 
     ' List calls to dark styles
     Call ApplyDarkStyle(styleName:="Normal", fillColorHex:="#2E3440", fontColorHex:="#FFFFFF", borderColorHex:="#454545")
