@@ -11,6 +11,8 @@ Don't forget to toggle a workbook back to light mode before you share it with un
 
 # Setup
 
+To set this up you'll need to copy some VBA code into a new macro. Follow the links below to the code, and to support articles on creating personal macros and calling them from your quick access bar:
+
 1. Copy the code from [DarkMode.vba](https://raw.githubusercontent.com/stu0292/ExcelDarkMode/main/DarkMode.vba) to a new module in your [PERSONAL.XLSB](https://support.microsoft.com/en-gb/office/create-and-save-all-your-macros-in-a-single-workbook-66c97ab3-11c2-44db-b021-ae005a9bc790), save. 
 2. Run the macro ToggleDarkMode to switch between dark and light modes
 3. For ease of use, add the macro to your [Quick Access bar](https://www.howtogeek.com/232620/how-to-add-a-macro-to-the-quick-access-toolbar-in-office/)
