@@ -17,6 +17,8 @@ To set this up you'll need to copy some VBA code into a new macro. Follow the li
 2. Run the macro ToggleDarkMode to switch between dark and light modes
 3. For ease of use, add the macro to your [Quick Access bar](https://www.howtogeek.com/232620/how-to-add-a-macro-to-the-quick-access-toolbar-in-office/)
 
+Since added [DarkMode2.vba](https://raw.githubusercontent.com/stu0292/ExcelDarkMode/main/DarkMode2.vba)
+
 # Customisation
 
 To change the dark mode colours, change the Hex colour code parameters in the `DarkMode` Function:
