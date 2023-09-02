@@ -1,7 +1,7 @@
 ' Customisable dark mode for Excel cells
-' https://github.com/stu0292/ExcelDarkMode
+' https://github.com/stu-bell/ExcelDarkMode
 ' Copyright (c) 2021 Stuart Bell
-' Licenced under the MIT licence: https://github.com/stu0292/ExcelDarkMode/blob/main/LICENSE
+' Licenced under the MIT licence: https://github.com/stu-bell/ExcelDarkMode/blob/main/LICENSE
 ' Only modifies cell styles. Will not change colors of cells that have been formatted separately.
 ' To include custom formatted cells in dark mode, create a new style for that formatting and include the style in this module
 ' Color codes for each style must be inserted into the code below  for both DarkMode and LightMode (see comments in Functions below)
