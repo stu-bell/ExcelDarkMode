@@ -1,6 +1,6 @@
-' https://github.com/stu0292/ExcelDarkMode
+' https://github.com/stu-bell/ExcelDarkMode
 ' Copyright (c) 2021 Stuart Bell
-' Licenced under the MIT licence: https://github.com/stu0292/ExcelDarkMode/blob/main/LICENSE
+' Licenced under the MIT licence: https://github.com/stu-bell/ExcelDarkMode/blob/main/LICENSE
 
 ' Inverts the colors of styles. Work in progress!
 
